@@ -26,7 +26,7 @@ namespace DateStamp
             stopWatch.Stop();
             string elapsedTime = stopWatch.ElapsedMilliseconds.ToString();
             string msg = result ? $"Done. Elapsed time: {elapsedTime} ms." :
-                $"Error. AddDateStamps() returned {result}";
+                                  $"Error. AddDateStamps() returned {result}";
             Console.WriteLine(msg);
 
             Console.WriteLine("Press any key to exit");

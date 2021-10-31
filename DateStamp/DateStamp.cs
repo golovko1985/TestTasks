@@ -11,7 +11,7 @@ namespace DateStamp
         {
             // Thread-safe collection
             var docs = new BlockingCollection<Document>();
-            // Build the pipeline.
+            // Build the pipeline
             var stageRead = Task.Run(() =>
             {
                 try
@@ -45,7 +45,7 @@ namespace DateStamp
             });
             Task.WaitAll(stageRead, stageWrite);
             return stageRead.Status == TaskStatus.RanToCompletion &&
-                stageWrite.Status == TaskStatus.RanToCompletion;
+                   stageWrite.Status == TaskStatus.RanToCompletion;
         }
     }
 }

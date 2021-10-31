@@ -14,11 +14,12 @@ namespace DateStamp
             {
                 Holidays.Add(new DateTime(DateTime.Now.Year, i, 1));
             }
-            Holidays.Add(new DateTime(DateTime.Now.Year, 2, 23));
-            Holidays.Add(new DateTime(DateTime.Now.Year, 3, 8));
-            Holidays.Add(new DateTime(DateTime.Now.Year, 5, 1));
-            Holidays.Add(new DateTime(DateTime.Now.Year, 5, 9));
-            Holidays.Add(new DateTime(DateTime.Now.Year, 6, 12));
+
+            Holidays.Add(new DateTime(DateTime.Now.Year, 2,  23));
+            Holidays.Add(new DateTime(DateTime.Now.Year, 3,  8));
+            Holidays.Add(new DateTime(DateTime.Now.Year, 5,  1));
+            Holidays.Add(new DateTime(DateTime.Now.Year, 5,  9));
+            Holidays.Add(new DateTime(DateTime.Now.Year, 6,  12));
             Holidays.Add(new DateTime(DateTime.Now.Year, 11, 4));
         }
 
