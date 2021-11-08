@@ -26,16 +26,15 @@ namespace WindowsFormsGraphicShapes
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -46,7 +45,6 @@ namespace WindowsFormsGraphicShapes
             this.pictureBox1.Size = new System.Drawing.Size(884, 330);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // button1
             // 
@@ -54,17 +52,25 @@ namespace WindowsFormsGraphicShapes
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 37);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Push for draw objects";
+            this.button1.Text = "Click for draw objects";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBox1.Location = new System.Drawing.Point(215, 347);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(657, 20);
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox1.Size = new System.Drawing.Size(657, 102);
             this.textBox1.TabIndex = 2;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.Text = "Object properties...";
+            // 
+            // form1BindingSource
+            // 
+            this.form1BindingSource.DataSource = typeof(WindowsFormsGraphicShapes.Form1);
             // 
             // Form1
             // 
@@ -75,8 +81,9 @@ namespace WindowsFormsGraphicShapes
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Draw Objects";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -87,6 +94,7 @@ namespace WindowsFormsGraphicShapes
         private PictureBox pictureBox1;
         private Button button1;
         private TextBox textBox1;
+        private BindingSource form1BindingSource;
     }
 }
 

@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsGraphicShapes
@@ -17,42 +13,46 @@ namespace WindowsFormsGraphicShapes
             InitializeComponent();
         }
 
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Graphics g = pictureBox1.CreateGraphics();
-            g.Clear(Color.Black);
+            g.Clear(Color.Gray);
 
-            SolidBrush brush = new SolidBrush(Color.Coral);
             List<Shape> shapes = new List<Shape>();
-            Shape r = new Rectangle(30, 20);
-            r.Draw(g, brush, 20, 50);
-            shapes.Add(r);
-            var area = r.GetArea();
-            var perimeter = r.GetPerimeter();
+            SolidBrush brush = new SolidBrush(Color.Coral);
 
-            Shape s = new Square(10);
-            s.Draw(g, brush, 120, 150);
+            Shape r = new Rectangle(brush, 80, 40);
+            r.Draw(g, 120, 60);
+            shapes.Add(r);
+
+            Shape s = new Square(brush, 70);
+            s.Draw(g, 250, 150);
             shapes.Add(s);
 
             brush = new SolidBrush(Color.Gold);
-            Shape c = new Circle(30);
-            c.Draw(g, brush, 130, 180);
+            Shape c = new Circle(brush, 60);
+            c.Draw(g, 350, 230);
             shapes.Add(c);
+
+            Shape r2 = new Rectangle(brush, 60, 125);
+            r2.Draw(g, 500, 100);
+            shapes.Add(r2);
+
+            Shape t = new Triangle(brush, 80, 60);
+            t.Draw(g, 700, 200);
+            shapes.Add(t);
+
+            StringBuilder stringBuilder = new StringBuilder();
 
             foreach (var shape in shapes)
             {
-                Console.WriteLine($"Object: {shape.GetType().Name} Area: {shape.GetArea()} Perimeter: {shape.GetPerimeter()}");
+                stringBuilder.AppendLine($"Object: {shape.GetType().Name, -15}" +
+                                         $"Color: {shape.Brush.Color.Name, -10}" +
+                                         $"Area: {shape.GetArea(), -15:F2}" +
+                                         $"Perimeter: {shape.GetPerimeter(), -15:F2}");
             }
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            textBox1.Text = stringBuilder.ToString();
         }
     }
 }

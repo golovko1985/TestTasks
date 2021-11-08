@@ -5,7 +5,7 @@ namespace WindowsFormsGraphicShapes
 {
     public class Square : Rectangle
     {
-        public Square(float width) : base(width, width)
+        public Square(SolidBrush brush, float width) : base(brush, width, width)
         {
         }
     }

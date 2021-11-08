@@ -7,35 +7,40 @@ namespace WindowsFormsGraphicShapes
     {
         private float width;
         private float height;
+        private SolidBrush brush;
 
         public float Width
         {
             get => width; 
             set => width = value < 0 ? -value : value; 
         }
+
         public float Height
         {
             get => height; 
             set => height = value < 0 ? -value : value;
         }
-        public Rectangle(float width, float height)
+
+        public override SolidBrush Brush
         {
+            get => brush;
+            set => brush = value;
+        }
+
+        public Rectangle(SolidBrush solidBrush, float width, float height)
+        {
+            this.Brush = solidBrush;
             this.Width = width;
             this.Height = height;
         }
-        public override void Draw(Graphics g, SolidBrush brush, int x, int y)
+
+        public override void Draw(Graphics g,  int x, int y)
         {
-            g.FillRectangle(brush, x, y, Width, Height);
+            g.FillRectangle(Brush, x, y, Width, Height);
         }
 
-        public override double GetArea()
-        {
-            return Width * Height;
-        }
+        public override double GetArea() => Width * Height;
 
-        public override double GetPerimeter()
-        {
-            return Width * 2 + Height * 2;
-        }
+        public override double GetPerimeter() => Width * 2 + Height * 2;
     }
 }
